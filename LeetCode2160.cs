@@ -11,7 +11,6 @@ namespace LeetCodeSolutions
         public static int minimumSum(int num)
         {
             // LeetCode #2160 (Minimum Sum of Four Digit Number After Splitting Digits)
-            // Taking a givin array and splitting the number, add the digits together to get the lowest sum.
             
             int[] arr = new int[4]; // An array for the digits
             int newNum = 0;
