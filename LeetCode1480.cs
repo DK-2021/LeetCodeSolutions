@@ -8,7 +8,7 @@ namespace LeetCodeSolutions
 {
     public class LeetCode1480
     {
-        //LeetCode #1480. Running Sum of 1D Array
+        //LeetCode #1480. Running Sum of 1D Array.
         public int[] RunningSum2(int[] arr)
         {
             int[] result = new int[arr.Length];
