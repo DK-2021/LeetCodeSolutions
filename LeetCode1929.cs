@@ -9,7 +9,7 @@ namespace LeetCodeSolutions
     public class LeetCode1929
     {
         // LeetCode #1929. Concatenation of an array.
-        // Duplicating an array and making into in one array.
+        // Duplicating an array and making into in one single array.
         public int[] ConcateArray(int[] inputArray)
         {
             int[] result = new int[inputArray.Length * 2];
