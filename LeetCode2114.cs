@@ -8,7 +8,7 @@ namespace LeetCodeSolutions
 {
     public class LeetCode2114
     {
-        //Leetcode #2114. Maximum Number of Words Found in Sentences.
+        //Leetcode #2114. Number of words found in string.
         //Split the indexes on the spaces and count the spaces - compare.
         public int MostWordsFound(string[] sentences)
         {
