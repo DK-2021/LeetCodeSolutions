@@ -9,35 +9,25 @@ namespace LeetCodeSolutions
     public class CheckPalindrome
     {
         //Checking to see if a word is a Palindrome
-        public static bool CheckForPalindrome(string userInput)
+        public static bool CheckForPalindrome(int userInput)
         {
-            int badInput; // Check for bad input
+            int badInput; // Check for bad input if incoming with a string
             userInput = userInput.Trim();
             if (String.IsNullOrWhiteSpace(userInput) || int.TryParse(userInput, out badInput) == true)
             {
                 return false;
             }
-            string strOne = "";
-            StringBuilder createdString = new StringBuilder();
 
-            foreach (var i in userInput) // To account for spaces in a word
+            string num = Convert.ToString(userInput); // To check for an incoming string, just remove this.
+            int i = 0;
+            int j = num.Length - 1;
+            while (i < num.Length) // To check for a string, change num to incoming string argument
             {
-                if (i == ' ')
-                {
-                    continue;
-                };
-                createdString.Append(i);
-            }
-
-            strOne = createdString.ToString();
-
-            int j = strOne.Length - 1;
-            for (int i = 0; i < strOne.Length; i++)
-            {
-                if (strOne[i] != strOne[j])
+                if (num[i] != num[j]) // To check for a string, change num to incoming string argument
                 {
                     return false;
                 }
+                i++;
                 j--;
             }
             return true;
