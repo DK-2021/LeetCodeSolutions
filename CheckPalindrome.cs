@@ -11,12 +11,12 @@ namespace LeetCodeSolutions
         //Checking to see if a word is a Palindrome
         public static bool CheckForPalindrome(int userInput)
         {
-            int badInput; // Check for bad input if incoming with a string
-            userInput = userInput.Trim();
-            if (String.IsNullOrWhiteSpace(userInput) || int.TryParse(userInput, out badInput) == true)
-            {
-                return false;
-            }
+            //int badInput; // Check for bad input if incoming with a string was allowed
+            //userInput = userInput.Trim();
+            //if (String.IsNullOrWhiteSpace(userInput) || int.TryParse(userInput, out badInput) == true)
+            //{
+            //    return false;
+            //}
 
             string num = Convert.ToString(userInput); // To check for an incoming string, just remove this.
             int i = 0;
