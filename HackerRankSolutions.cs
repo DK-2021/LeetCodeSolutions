@@ -146,5 +146,55 @@ namespace LeetCodeSolutions
             }
             return "pangram";
         }
+        // Birthday Cake Candles
+        public static int birthdayCakeCandles(List<int> candles)
+        {
+            int answer = 0;
+            int currentGreatest = 0;
+            foreach (int i in candles)
+            {
+                if (i > currentGreatest)
+                {
+                    currentGreatest = i;
+                }
+            }
+            for (int j = 0; j < candles.Count(); j++)
+            {
+                if (candles[j] == currentGreatest)
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
+        // SockMerchant
+        public static int sockMerchant(int n, List<int> ar)
+        {
+            Dictionary<int, int> map = new Dictionary<int, int>();
+            int answer = 0;
+            int total = 0;
+
+            foreach (var i in ar)
+            {
+                if (!map.ContainsKey(i))
+                {
+                    map.Add(i, 1);
+                }
+                else
+                {
+                    map[i]++;
+                }
+            }
+            foreach (var k in map)
+            {
+                if (k.Value >= 2)
+                {
+                    answer = k.Value / 2;
+                    total += answer;
+
+                }
+            }
+            return total;
+        }
     }
 }
