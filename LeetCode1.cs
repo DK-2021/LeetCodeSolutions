@@ -36,6 +36,22 @@ namespace LeetCodeSolutions
                 }
             }
             return result;
+
+            // Another method but returns the string location
+            string answer;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int point = nums[i];
+                for (int j = 1; j < nums.Length; j++)
+                {
+                    if (point + nums[j] == target && i != j)
+                    {
+                        answer = ($"Array positons: {nums[i]}, {nums[j]} equal the target");
+                        //return answer;
+                    }
+                }
+            }
+            //return "There is no equal to the target";
         }
     }
 }

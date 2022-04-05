@@ -83,7 +83,7 @@ namespace LeetCodeSolutions
             }
             return "";
         }
-        // HackRank Week1, Day 2, Question 4.
+        // HackRank Week 1, Day 2, Question 4.
         public static List<int> matchingStrings(List<string> strings, List<string> queries)
         {
             int[] result = new int[queries.Count];
@@ -103,6 +103,48 @@ namespace LeetCodeSolutions
 
             List<int> answer = result.ToList();
             return answer;
+        }
+        // HackerRank Week 1, Day 2, Question 5.
+        public static int lonelyInteger(List<int> a)
+        {
+            int result = 0;
+
+            Dictionary<int, int> map = new Dictionary<int, int>();
+
+            foreach (var i in a)
+            {
+                if (map.ContainsKey(i))
+                {
+                    map[i]++;
+                }
+                else
+                {
+                    map[i] = 1;
+                }
+            }
+            var answer = map.Where(x => x.Value == 1);
+
+            foreach (var i in answer)
+            {
+                result = i.Key;
+            }
+
+            return result;
+        }
+        // HackerRank Pangrams
+        public static string pangrams(string s)
+        {
+            string abc = "abcdefghijklmnopqrstuvwxyz";
+            string sLower = s.ToLower();
+
+            foreach (char x in abc)
+            {
+                if (!sLower.Contains(x))
+                {
+                    return "not pangram";
+                }
+            }
+            return "pangram";
         }
     }
 }

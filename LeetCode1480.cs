@@ -21,5 +21,17 @@ namespace LeetCodeSolutions
             }
             return result;
         }
+        public int[] RunningSum(int[] nums)
+        {
+            int[] answer = new int[nums.Length];
+            int runner = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                answer[i] = nums[i] + runner;
+                runner += nums[i];
+            }
+            return answer;
+        }
     }
 }
