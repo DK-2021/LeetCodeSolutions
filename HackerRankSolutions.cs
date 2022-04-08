@@ -196,5 +196,47 @@ namespace LeetCodeSolutions
             }
             return total;
         }
+        // Grading Students Problem
+        public static List<int> gradingStudents(List<int> grades)
+        {
+            List<int> answers = new List<int>();
+            foreach (int i in grades)
+            {
+                if (i < 38 || i % 5 == 0)
+                {
+                    answers.Add(i);
+                }
+                else if (i % 5 == 3)
+                {
+                    answers.Add(i + 2);
+                }
+                else if (i % 5 == 4 && i >= 10)
+                {
+                    answers.Add(i + 1);
+                }
+                else if (i < 10)
+                {
+                    continue;
+                }
+                else
+                {
+                    answers.Add(i);
+                }
+            }
+            return answers;
+        }
+        // Staircase
+        public static void staircase(int n)
+        {
+            int i = 0, j = 1, k = n;
+
+            while (i < n)
+            {
+                Console.WriteLine(new String(' ', k - 1) + (new String('#', j)));
+                k--;
+                i++;
+                j++;
+            }
+        }
     }
 }
