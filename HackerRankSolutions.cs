@@ -238,5 +238,39 @@ namespace LeetCodeSolutions
                 j++;
             }
         }
+        // Compare the Triplets
+        public static List<int> compareTriplets(List<int> a, List<int> b)
+        {
+            int[] score = new int[2];
+            int scoresA = 0;
+            int scoresB = 0;
+            for (int i = 0; i < a.Count; i++)
+            {
+
+                if (a[i] > b[i])
+                {
+                    scoresA++;
+                    score[0] = scoresA;
+                }
+                else if (a[i] < b[i])
+                {
+                    scoresB++;
+                    score[1] = scoresB;
+                }
+            }
+            List<int> answer = score.ToList();
+            return answer;
+        }
+        // A Very Big Sum
+        public static long aVeryBigSum(List<long> ar)
+        {
+            // add up the elements in a list
+            long answer = 0;
+            for (int i = 0; i < ar.Count(); i++)
+            {
+                answer += ar[i];
+            }
+            return answer;
+        }
     }
 }
