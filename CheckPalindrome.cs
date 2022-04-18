@@ -8,7 +8,7 @@ namespace LeetCodeSolutions
 {
     public class CheckPalindrome
     {
-        //Checking to see if a word is a Palindrome
+        //Checking to see if an Int is a Palindrome
         public static bool CheckForPalindrome(int userInput)
         {
             // check for length here
@@ -48,6 +48,52 @@ namespace LeetCodeSolutions
                 k++;
             }
             var newString = String.Join("", charArr); // Joining the chars to create a new string to compare with
+            return newString == input;
+        }
+        // With String input
+        private static bool isPalindrome(string str)
+        {
+            if (String.IsNullOrWhiteSpace(str) || str.Length < 2)
+            {
+                return true;
+            }
+
+            int i = 0, j = str.Length - 1;
+
+            while (i < str.Length)
+            {
+                if (str[i] != str[j])
+                {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+            return true;
+        }
+        public static bool SubOptimalPalindromeWithStack(string input)
+        {
+            // Using a stack to solve a Palindrome
+            Stack<char> map = new Stack<char>();
+
+            char[] charArr = new char[input.Length];
+
+            // Place chars from string on the stack
+            foreach (char c in input) 
+            {
+                map.Push(c);
+            }
+            
+            int p = 0, k = 0;
+            // Popping the chars off the stack.  Auto decrements with the char popping off
+            while (p < map.Count()) 
+            {
+                charArr[k] = map.Pop();
+                k++;
+            }
+
+            // Joining the chars to create a new string to compare with
+            var newString = String.Join("", charArr); 
             return newString == input;
         }
     }
