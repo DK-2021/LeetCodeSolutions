@@ -23,5 +23,19 @@ namespace LeetCodeSolutions
             }
             return result;
         }
+        public string[] CombineTwoArrays(string[] str1, string[] str2)
+        {
+            string[] finalString = new string[str1.Length + str2.Length];
+
+            for (int i = 0; i < str1.Length; i++)
+            {
+                finalString[i] = str1[i];
+            }
+            for (int j = 0; j < str2.Length; j++)
+            {
+                finalString[str1.Length + j] = str2[j];
+            }
+            return finalString;
+        }
     }
 }
